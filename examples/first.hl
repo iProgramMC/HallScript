@@ -1,0 +1,90 @@
+// Program name: "First"
+// Version: 1.0
+// (C) 2020 iProgramInCpp
+// This serves as an example for the HallScript scripting language
+// The HallScript scripting language is a very simple scripting language
+// which can take care of simple scripting needs, similarly to lua.
+
+// This is a comment
+
+global_var|int|test|19992483
+global_var|int|test2
+global_var|string|test3|"Hi"
+global_var|string|test4|test3
+global_var|bool|test5|false
+global_var|bool|test4|test3
+
+
+function_args_start
+	func_arg|int|argument
+function_args_end
+start_function|testing
+	printl_fmt|"The test function has been called :) (argument: {0})"|argument
+end_function
+
+// Testing2 function
+function_args_start
+	func_arg|int|argument
+function_args_end
+start_function|testing2
+	printl_fmt|"The test function has been called :) (argument: {0})"|argument
+end_function
+
+return_value_type|int
+start_function|super_mario_64_release_date
+	return|1996
+	printl|"You shouldnt see this!"
+end_function
+
+// Scrapped, todo
+//function_args_start
+//	func_arg|ref_int|a
+//function_args_end
+//start_function|a
+//	set_var|a|199946
+//	add_var|a|5996
+//end_function
+
+// When no arguments are needed, the whole  function_args block is not needed.
+// Likewise, when we don't need a return value type, the return_value_type block isn't needed.
+// When we do have a return_value_type, the first argument is the return value.
+return_value_type|int
+start_function|main
+
+	// The tabs should be automatically cut out anyway
+	printl|"Hello, world!"
+	printl|"This is a test"
+	printl_fmt|"Hello! {0} {1} {2} {3} {4}"|1337|0x3995|"Hi"|0x1337|69420
+	
+	// Defines a value
+	def_var|string|readoutValue|""
+	// Also supports nothing as the default value, for example
+	// def_var|string|test
+	
+	read_in|readoutValue
+	def_var|int|readoutValueInt|0
+	def_var|bool|check|false
+	
+	// Converts readoutValue's string value to an int inside readoutValueInt
+	convert_string_to_int|readoutValue|readoutValueInt
+	
+	// Stores the result inside "check" of the isEqual comparison between readoutValueInt and 1337
+	is_equal|readoutValueInt|1337|check
+	
+	// After the function name ("testing" in this case), we will push the arguments.
+	// This function is only called 
+	call_if|check|testing|readoutValueInt
+	not|check
+	call_if|check|testing2|readoutValueInt
+	
+	printl_fmt|"Testing value: {0}"|test
+	
+	def_var|int|sm64|0
+	call|super_mario_64_release_date|sm64
+	printl_fmt|"Super Mario 64 release year: {0}"|sm64
+	
+	return|1337
+	// Code below the return statement should not execute.
+	
+	printl|"You shouldn't see this! What's going on?!"
+end_function

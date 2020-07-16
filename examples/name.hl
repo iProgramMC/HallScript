@@ -1,0 +1,34 @@
+// Program name: "Name"
+// Version: 1.0
+// (C) 2020 iProgramInCpp
+// This serves as an example for the HallScript scripting language
+// The HallScript scripting language is a very simple scripting language
+// which can take care of simple scripting needs, similarly to lua.
+
+global_var|string|fname|""
+global_var|string|lname|""
+global_var|string|sname|""
+
+return_value_type|int
+start_function|main
+	def_var|string|response|""
+	def_var|bool|check
+def_label|Start
+	printl|"Hey, whats your first name?"
+	print|"Write it here: >"
+	read_in|fname
+	printl|"Whats your last name?"
+	print|"Write it here: >"
+	read_in|lname
+	set_var|sname|fname
+	concat_str|sname|" "
+	concat_str|sname|lname
+	print_fmt|"So, your name is {0} huh? >"|sname
+	read_in|response
+	is_equal|response|"yes"|check
+	not|check
+	jump_if|check|Start
+	// The player said yes
+	printl|"That's great!"
+end_function
+	

@@ -1,0 +1,15 @@
+// Program name: "Simple Test"
+// Version: 1.0
+// (C) 2020 iProgramInCpp
+// This serves as an example for the HallScript scripting language
+// The HallScript scripting language is a very simple scripting language
+// which can take care of simple scripting needs, similarly to lua.
+
+global_var|string|to_print|"Hello, world"
+
+return_value_type|int
+start_function|main
+	printl|to_print
+	print|"This is an embedded string."
+	return|1337
+end_function

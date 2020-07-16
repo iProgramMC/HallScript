@@ -1,0 +1,12 @@
+// Program name: "Multi"
+// Version: 1.0
+// (C) 2020 iProgramInCpp
+// This serves as an example for the HallScript scripting language
+// The HallScript scripting language is a very simple scripting language
+// which can take care of simple scripting needs, similarly to lua.
+
+// This file is included inside test.hl
+
+start_function|par
+	printl|"This is a par"
+end_function
