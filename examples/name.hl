@@ -1,8 +1,8 @@
 // Program name: "Name"
 // Version: 1.0
 // (C) 2020 iProgramInCpp
-// This serves as an example for the HallScript scripting language
-// The HallScript scripting language is a very simple scripting language
+// This serves as an example for the HillScript scripting language
+// The HillScript scripting language is a very simple scripting language
 // which can take care of simple scripting needs, similarly to lua.
 
 global_var|string|fname|""
