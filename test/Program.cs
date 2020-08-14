@@ -254,7 +254,7 @@ namespace HallScript
                         throw new Exception("#import with too many/too little arguments...");
                     }
                     string file = split[1];
-                    string contents = ParseFileImports(Path.GetDirectoryName(filename) + "/" + file, File.ReadAllText(Path.GetDirectoryName(filename) + "/" + file));
+                    string contents = ParseFileImports(Environment.CurrentDirectory + "/" + file, File.ReadAllText(Environment.CurrentDirectory + "/" + file)); // todo: use the same path as the actual file instead!!
                     finalText += contents + "\n";
                 }
                 else
